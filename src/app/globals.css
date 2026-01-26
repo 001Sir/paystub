@@ -90,22 +90,4 @@ input::placeholder {
     -webkit-print-color-adjust: exact !important;
   }
 
-  /* Add watermark for print */
-  .print-mode .bg-white {
-    position: relative;
-  }
-
-  .print-mode .bg-white::before {
-    content: "GENERATED PAYSTUB";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-30deg);
-    font-size: 48px;
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.05);
-    white-space: nowrap;
-    pointer-events: none;
-    z-index: 0;
-  }
 }

@@ -623,7 +623,7 @@ export function PaystubPDF({ results }: PaystubPDFProps) {
           </View>
 
           {/* Watermark */}
-          <Text style={styles.watermark}>GENERATED PAYSTUB</Text>
+          <Text style={styles.watermark}>{result.input.companyName.toUpperCase()}</Text>
 
           {/* Footer */}
           <View style={styles.footer}>

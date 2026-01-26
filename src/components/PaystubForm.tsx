@@ -215,26 +215,9 @@ export default function PaystubForm({ onCalculate, initialData, onAutoSave, hasS
   const selectClass = "w-full h-12 px-4 bg-stone-50 rounded-lg border border-stone-200 hover:border-stone-400 focus:border-stone-800 focus:outline-none focus:ring-0 text-stone-800 transition-colors appearance-none cursor-pointer";
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg shadow-stone-200/50 max-w-2xl mx-auto overflow-hidden">
-      {/* Patriotic stripe accent */}
-      <div className="h-1 flex">
-        <div className="flex-1 bg-red-600"></div>
-        <div className="flex-1 bg-white"></div>
-        <div className="flex-1 bg-blue-700"></div>
-      </div>
-
-      <div className="p-4 sm:p-8">
-      {/* Header */}
+    <div className="bg-white rounded-2xl shadow-lg shadow-stone-200/50 max-w-2xl mx-auto p-4 sm:p-8">
+      {/* Form Header with Step Counter */}
       <div className="flex items-center justify-between mb-6 sm:mb-8">
-        <div className="flex items-center gap-2 sm:gap-3">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-stone-800 flex items-center justify-center">
-            <span className="text-white font-bold text-sm sm:text-base">P</span>
-          </div>
-          <div>
-            <span className="text-stone-800 font-semibold text-base sm:text-lg">Free Pay Stub</span>
-            <span className="text-stone-400 text-xs sm:text-sm ml-1 sm:ml-2 hidden sm:inline">Generator</span>
-          </div>
-        </div>
         <div className="flex items-center gap-2 sm:gap-3">
           {hasSavedData && onClearData && (
             <button
@@ -246,12 +229,12 @@ export default function PaystubForm({ onCalculate, initialData, onAutoSave, hasS
               Start New
             </button>
           )}
-          <div className="flex items-center gap-1.5 sm:gap-2 text-sm">
-            <span className="text-stone-400 hidden sm:inline">Step</span>
-            <span className="bg-stone-800 text-white px-2 py-0.5 rounded-md font-medium text-xs sm:text-sm">
-              {currentStepIndex + 1}/{STEPS.length}
-            </span>
-          </div>
+        </div>
+        <div className="flex items-center gap-1.5 sm:gap-2 text-sm">
+          <span className="text-stone-400 hidden sm:inline">Step</span>
+          <span className="bg-stone-800 text-white px-2 py-0.5 rounded-md font-medium text-xs sm:text-sm">
+            {currentStepIndex + 1}/{STEPS.length}
+          </span>
         </div>
       </div>
 
@@ -904,7 +887,6 @@ export default function PaystubForm({ onCalculate, initialData, onAutoSave, hasS
           </button>
         )}
       </nav>
-      </div>
     </div>
   );
 }
