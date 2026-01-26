@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f3f4f6;
+  --foreground: #111827;
 }
 
 @theme inline {
@@ -12,15 +12,100 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Force input text to be black */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+  color: #111827 !important;
+  background-color: #ffffff !important;
+  -webkit-text-fill-color: #111827 !important;
+  opacity: 1 !important;
+}
+
+input::placeholder {
+  color: #9ca3af !important;
+  -webkit-text-fill-color: #9ca3af !important;
+  opacity: 1 !important;
+}
+
+/* Print styles */
+@media print {
+  /* Reset page margins */
+  @page {
+    size: letter;
+    margin: 0.5in;
+  }
+
+  /* Hide non-printable elements */
+  header,
+  footer,
+  nav {
+    display: none !important;
+  }
+
+  /* Reset body for printing */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 10pt !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Ensure text is readable */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Make background colors print */
+  .bg-gray-800,
+  .bg-stone-800 {
+    background-color: #1f2937 !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  .bg-gray-100,
+  .bg-gray-50 {
+    background-color: #f3f4f6 !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  .bg-amber-50 {
+    background-color: #fffbeb !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* Ensure white text on dark backgrounds */
+  .text-white {
+    color: white !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* Add watermark for print */
+  .print-mode .bg-white {
+    position: relative;
+  }
+
+  .print-mode .bg-white::before {
+    content: "GENERATED PAYSTUB";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-size: 48px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.05);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+  }
 }

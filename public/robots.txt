@@ -1,0 +1,10 @@
+# robots.txt for Free Pay Stub Generator
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://freepaystubgen.com/sitemap.xml
+
+# Crawl-delay (optional, be polite to crawlers)
+Crawl-delay: 1
