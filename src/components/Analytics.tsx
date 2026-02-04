@@ -2,8 +2,8 @@
 
 import Script from 'next/script';
 
-// Replace with your actual Google Analytics ID
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
+// Google Analytics Measurement ID
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-8BKQ88M9LK';
 
 export default function Analytics() {
   // Don't render if no GA ID is set
